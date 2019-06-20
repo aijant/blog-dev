@@ -1,0 +1,117 @@
+body {
+    font: 16px arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #9fbfde;
+}
+
+.toolbar input[type="submit"] {
+    color: #000004;
+    font: inherit;
+    text-decoration: none;
+    background: #dcdee0;
+    display: block;
+    margin: 20px auto;
+    border: 2px solid #0b6cb7;
+    padding: 14px 20px;
+    cursor: pointer;
+    font-weight: 900;
+    border-radius: 5px;
+}
+
+.error {
+    padding: 1em;
+    border: 0.1em dashed red;
+    background-color: hsl(100, 100%, 90%);
+}
+
+.comment>.login {
+    font-weight: bold;
+}
+
+.box {
+    width: 300px;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #051f33;
+    text-align: center;
+    border-radius: 5px;
+}
+
+/* .blog {
+    transform: translate(48%, 656%);
+    text-decoration: blink;
+    margin: 0 auto;
+    text-transform: uppercase;
+    font-weight: 500;
+
+} */
+
+.box input[type="text"],
+.box input[type="password"] {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #3498db;
+    padding: 14px 10px;
+    width: 200px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+}
+
+.box input[type="text"]:focus,
+.box input[type="password"]:focus {
+    width: 280px;
+    border-color: #2ecc71;
+}
+
+.box input[type="submit"] {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #2ecc71;
+    padding: 14px 40px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+.box input[type="submit"]:hover {
+    background: #2ecc71;
+}
+
+.enter-title input[type="text"],
+[type="submit"],
+textarea {
+    color: #000004;
+    font: inherit;
+    background: #dcdee0;
+    display: block;
+    margin: 20px auto;
+    border: 2px solid #0b6cb7;
+    padding: 10px 12px;
+    font-weight: 300;
+}
+
+.enter-title [type="submit"] {
+    border-radius: 5px;
+}
+
+.edit-box {
+    text-align: center;
+}
+
+footer p {
+    font-size: 12px;
+}

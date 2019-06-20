@@ -1,0 +1,13 @@
+<section class="toolbar">
+    <div class="edit-box">
+    <a href="/entries">&lt;</a>
+    <% if (session.administrator) { %>
+        |
+        <a href="/entry/<%= entry.id %>/update" >edit</a>
+        |
+    </div>
+        <form method="post" action="/entry/<%= entry.id %>/delete" style="display:inline;">
+            <input type="submit" value="x">
+        </form>
+    <% } %>
+</section>
