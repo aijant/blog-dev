@@ -12,6 +12,9 @@ const fs =
     require('fs');
 const http =
     require('http');
+const https =
+    require('https');
+
 const {
     authHandlers
 } = require('./auth.js')
@@ -32,6 +35,16 @@ const utils = require('./util.js')
 
 const server = express();
 server.set('view engine', 'ejs');
+
+const privateKey = fs.readFileSync('/etc/letsencrypt/live/devcit-js-10.auca.space/privkey1.pem', 'utf8');
+const certificate = fs.readFileSync('/etc/letsencrypt/live/devcit-js-10.auca.space/cert1.pem', 'utf8');
+const ca = fs.readFileSync('/etc/letsencrypt/live/devcit-js-10.auca.space/chain1.pem', 'utf8');
+
+const credentials = {
+	'key': privateKey,
+	'cert': certificate,
+	'ca': ca
+};
 
 server.use(express.static(path.join(__dirname, 'static')));
 server.use(bodyParser.urlencoded({
@@ -68,7 +81,8 @@ database.sync().then(() => {
         'administrator': false
     });
 }).then(() => {
-    http.createServer(server).listen(utils.getServerPort(), () => {
+    const httpsServer = https.createServer(credentials, server);
+    httpsServer.listen(utils.getServerPort(), () => {
         console.log(`The server is listening on port '${utils.getServerPort()}'.`);
     });
 });

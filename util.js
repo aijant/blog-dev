@@ -86,12 +86,12 @@ const getDatabasePassword = () => {
 };
 
 const getServerPort = () => {
-    const serverPort = process.env['BLOG_SERVER_PORT'];
+    const serverPort = process.env['BLOG_SERVER_HTTPS_PORT'];
     if (serverPort == null) {
-        serverPort = '8080';
+        serverPort = '443';
 
         console.warn(
-            'The server port "BLOG_SERVER_PORT" is not set in the ' +
+            'The server port "BLOG_SERVER_HTTPS_PORT" is not set in the ' +
             `".env" file. Assuming the server port is "${serverPort}".`
         );
     }
